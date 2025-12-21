@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1 id="name">loading name...</h1>
+    <div id="quote">loading quote....</div>
+    <h4 id="char">char</h4>
+    <script>
+      async function munction() {
+        console.log("start");
+        var response = await fetch("https://animechan.vercel.app/api/random");
+        var data = await response.json();
+        console.log(data);
+        let aName = document.getElementById("name");
+        let aQuote = document.getElementById("quote");
+        let aChar = document.getElementById("char");
+
+        aName.innerHTML = data.anime;
+        aQuote.innerHTML = data.quote;
+        aChar.innerHTML = data.character;
+      }
+      munction();
+    </script>
+  </body>
+</html>

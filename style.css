@@ -1,0 +1,28 @@
+#quote {
+  height: 20vh;
+  width: 50vw;
+  background-color: lightcoral;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+  margin-left: 20%;
+  color: blue;
+  font-family: cursive;
+  font-weight: 300;
+
+  padding: 20px;
+}
+#char {
+  margin-left: 70%;
+}
+#name {
+  text-align: center;
+  color: blueviolet;
+}
+
+@media (max-width: 670px) {
+  #quote {
+    height: 70vh;
+  }
+}
