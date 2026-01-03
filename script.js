@@ -1,14 +1,21 @@
 async function munction() {
-  console.log("start");
-  var response = await fetch("https://animechan.vercel.app/api/random");
-  var data = await response.json();
-  console.log(data);
-  let aName = document.getElementById("name");
-  let aQuote = document.getElementById("quote");
-  let aChar = document.getElementById("char");
+  try {
+    // We use the Yurippe API because it is reliable and free
+    const response = await fetch("https://yurippe.vercel.app/api/quotes?random=1");
 
-  aName.innerHTML = data.anime;
-  aQuote.innerHTML = data.quote;
-  aChar.innerHTML = data.character;
+    if (!response.ok) throw new Error("Network response was not ok");
+
+    const dataArray = await response.json();
+    const data = dataArray[0]; // This API returns an array
+
+    document.getElementById("name").innerHTML = data.show;
+    document.getElementById("quote").innerHTML = `"${data.quote}"`;
+    document.getElementById("char").innerHTML = `- ${data.character}`;
+
+  } catch (error) {
+    console.error("Error fetching quote:", error);
+    document.getElementById("quote").innerHTML = "Could not load quote. Try again!";
+  }
 }
+
 munction();

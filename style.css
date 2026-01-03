@@ -1,21 +1,23 @@
 #quote {
-  height: 20vh;
   width: 50vw;
-  background-color: lightcoral;
+  margin: 20px auto;
+  background-color: rgb(250, 240, 230);
   align-items: center;
   align-content: center;
   align-self: center;
   text-align: center;
   margin-left: 20%;
-  color: blue;
+  color: rgb(0, 0, 0);
   font-family: cursive;
   font-weight: 300;
 
   padding: 20px;
 }
+
 #char {
   margin-left: 70%;
 }
+
 #name {
   text-align: center;
   color: blueviolet;
